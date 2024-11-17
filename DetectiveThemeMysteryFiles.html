@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mystery Files</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #2b2b2b;
+            color: #fff;
+        }
+        header {
+            background-color: #1f1f1f;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+        header p {
+            font-size: 1rem;
+            color: #d3d3d3;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #3c3c3c;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+        }
+        .case-file {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #474747;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .case-file h2 {
+            margin-top: 0;
+        }
+        .case-file p {
+            color: #d3d3d3;
+        }
+        .clue-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .clue-list li {
+            margin: 10px 0;
+            background: #5a5a5a;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .clue-list li:hover {
+            background: #6f6f6f;
+        }
+        .hidden {
+            display: none;
+        }
+        .solution {
+            margin-top: 20px;
+            padding: 20px;
+            background: #6f6f6f;
+            border-radius: 5px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #ff5722;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background-color: #e64a19;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mystery Files</h1>
+        <p>Your free portal to uncover the truth.</p>
+    </header>
+    <div class="container">
+        <div class="case-file">
+            <h2>The Enigma of the Vanishing Star</h2>
+            <p>Dr. Evelyn Hart, a brilliant astrophysicist, has disappeared under mysterious circumstances. Your task is to sift through the evidence and uncover the truth.</p>
+            <ul class="clue-list">
+                <li onclick="showClue('notebook')">Notebook Pages</li>
+                <li onclick="showClue('burnedLetter')">Burned Letter</li>
+                <li onclick="showClue('securityFootage')">Security Footage Transcript</li>
+                <li onclick="showClue('receipts')">Receipts</li>
+            </ul>
+            <div id="notebook" class="hidden">
+                <h3>Notebook Pages</h3>
+                <p>Dr. Hart's cryptic notes reveal a pattern in her astronomical observations. The final page contains the cryptic phrase: "They are watching."</p>
+            </div>
+            <div id="burnedLetter" class="hidden">
+                <h3>Burned Letter</h3>
+                <p>A charred letter recovered from Dr. Hart's home: "If you expose the truth, we’ll make sure no one ever finds you."</p>
+            </div>
+            <div id="securityFootage" class="hidden">
+                <h3>Security Footage Transcript</h3>
+                <p>Footage shows a hooded figure entering the observatory at 11:30 PM, moments before Dr. Hart’s disappearance.</p>
+            </div>
+            <div id="receipts" class="hidden">
+                <h3>Receipts</h3>
+                <p>Two suspicious receipts were found in her belongings: one for a high-powered telescope, another for an untraceable train ticket.</p>
+            </div>
+            <a href="#" class="btn" onclick="revealSolution()">Ready to Solve?</a>
+            <div id="solution" class="hidden">
+                <h3>Solution</h3>
+                <p>The encoded coordinates on Dr. Hart's notebook lead to a hidden location. The hooded figure is revealed to be a jealous colleague who staged her disappearance.</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        function showClue(clueId) {
+            document.querySelectorAll('.hidden').forEach(clue => clue.style.display = 'none');
+            document.getElementById(clueId).style.display = 'block';
+        }
+        function revealSolution() {
+            document.getElementById('solution').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
